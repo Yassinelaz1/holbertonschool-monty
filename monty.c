@@ -8,6 +8,9 @@ int main(int argc, char **argv)
     instruction_t instructions[] = {
 		{"push", push_in_stack},
         {"pall", print_all},
+        {"pint",_pint},
+        {"pop",_pop},
+        {"add",_add},
         {"nop",nothing},
 		{NULL, NULL}};
     char *opcode;
@@ -17,7 +20,7 @@ int main(int argc, char **argv)
     if (argc != 2)
     {
         fprintf(stderr, "USAGE: monty file\n");
-        return (EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 
     
