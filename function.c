@@ -26,12 +26,14 @@ void push_in_stack(stack_t **stack, unsigned int value)
     new_node->next = *stack;
 
     if (*stack)
+    {
         (*stack)->prev = new_node;
-
+        free(*stack);
+    }
     *stack = new_node;
 }
 void nothing(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+    (void)stack;
+    (void)line_number;
 }

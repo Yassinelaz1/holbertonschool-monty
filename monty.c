@@ -55,7 +55,6 @@ int main(int argc, char **argv)
         }
     }
 
-    free(line);
     fclose(fd);
     free_stack(stack);
     return (0);
