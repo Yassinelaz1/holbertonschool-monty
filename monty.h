@@ -42,5 +42,4 @@ void print_all(stack_t **stack, unsigned int line_number);
 void push_in_stack(stack_t **stack, unsigned int value);
 void nothing(stack_t **stack, unsigned int line_number);
 
-void findfunc(char *opcode, char *value, int line_number, int format);
 #endif

@@ -28,7 +28,6 @@ void push_in_stack(stack_t **stack, unsigned int value)
     if (*stack)
     {
         (*stack)->prev = new_node;
-        free(*stack);
     }
     *stack = new_node;
 }
