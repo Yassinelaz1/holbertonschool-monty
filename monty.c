@@ -24,14 +24,14 @@ int main(int argc, char **argv)
     char *line = NULL;
     size_t len = 0;
 
-    FILE *fp = fopen(argv[1], "r");
-    if (fp == NULL)
+    FILE *fd = fopen(argv[1], "r");
+    if (fd == NULL)
     {
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         return (EXIT_FAILURE);
     }
 
-    while (getline(&line, &len, fp) != -1)
+    while (getline(&line, &len, fd) != -1)
     {
         line_number++;
         opcode = strtok(line, " $\n");
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     }
 
     free(line);
-    fclose(fp);
+    fclose(fd);
     free_stack(stack);
     return (0);
 }
