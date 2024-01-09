@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     if (fd == NULL)
     {
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-        return (EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 
     while (getline(&line, &len, fd) != -1)
@@ -51,7 +51,7 @@ int main(int argc, char **argv)
         {
             fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
             free_stack(stack);
-            return (EXIT_FAILURE);
+            exit(EXIT_FAILURE);
         }
     }
 
